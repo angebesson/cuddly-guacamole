@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de pintura</title>
+    <link rel="icon" type="image/svg" href="../resources/brush-solid.svg">
+    <script src="https://kit.fontawesome.com/8425a3d85b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html"> <img src="../resources/pintaLogo.webp" alt="Logo" class="logo"></a>
+            <div id="nav">
+                <a href="./calculadora.html"> <button  id="button1">CALCULÁ TU PINTURA</button></a>
+                <a href="#" class="navegador">♡</a>
+                <button href="#" id="button2">ELIGE TUS COLORES</button>
+                <a href="#" class="navegador">♡</a>
+                <a href="./pages/cart.html" class="navegador" id="cart"><img src="./resources/carritoPinta.webp" alt="carrito de compras"><span id="cuentaCarrito">0</span></a>
+            </div>
+        </nav>
+    </header> 
+    <main class="main-calculator">
+        <div id="game">
+            <div id="stats">
+              <span class="stat">PARED: <strong><span id="paredText">0</span></strong></span>
+              <span class="stat">METROS CUADRADOS: <strong><span id="m2Text">0</span></strong></span>
+              <span class="stat">LITROS: <strong><strong><span id="litrosText">0</span></strong></span>
+            </div>
+
+        </div>
+        <div id="controls">
+            <button id="button3">Go to store</button>
+            <button id="button4">Go to cave</button>
+            <button id="button5">Fight dragon</button>
+          </div>
+        <div id="text">
+          Te damos la bienvenida a tu nuevo proyecto !!! :) Con ésta calculadora puedes comenzar primero por medir en METROS tus paredes. Mide la ALTURA y el ANCHO. Ingresa los valores y obtendrás los METROS CUADRADOS a cubrir. También cuántos litros de pintura requieres POR MANO para cubrir tus paredes. </div>
+    </main>
+    <footer></footer>
+    <script src="../js/pinturas.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
