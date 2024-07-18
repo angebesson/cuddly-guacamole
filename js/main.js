@@ -79,7 +79,7 @@ boton.addEventListener("click", () => {
     total += pintura;
     text.innerText = "Cantidad de manos: " + i + "\n";
     text.innerText += "La superficie de tu pared es "+ superficie + "  metros cuadrados " + "\n";
-    text.innerHTML += "Necesitas " + pintura + " litros de pintura por mano para cubrir tu pared" + "\n";
+    text.innerHTML += "Necesitas " + Math.ceil(pintura) + " litros de pintura por mano para cubrir tu pared" + "\n";
 } 
 // alert(" Necesitas un total de " + total + " litros de pintura ")
 text.innerHTML += " Necesitas un total de " + total + " litros de pintura";

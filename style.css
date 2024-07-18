@@ -86,8 +86,23 @@ footer {
     list-style-type: none;
     box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.224);
 }
+/* INDEX */
+.main-index{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.presentacion img{
+height: 450px;
+border-radius: 10px;
+}
 /* CALCULADORA */
+.escondido{
+    display: none;
+}
 .main-calculator{
     display: flex;
     justify-content: center;
@@ -109,12 +124,13 @@ footer {
     border-radius: 5px;
     box-shadow: 1px 1px 5px 2px rgba(128, 128, 128, 0.534);
   }
-  #textp{
+  #textPresenta{
     max-width: 500px;
     padding: 10px;
     border-radius: 18px;
     text-align: center;
     box-shadow: 1px 1px 5px 2px rgba(128, 128, 128, 0.534);
+    margin-top: 20px;
   }
 #text {
 width: 500px;
