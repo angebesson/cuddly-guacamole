@@ -67,7 +67,11 @@ header nav div {
     height: 90px;
     box-shadow: 1px 1px 5px 2px rgba(128, 128, 128, 0.534);
 }
-
+#mostrarTexto{
+    height: 200px;
+    width: 200px;
+    background-color: antiquewhite;
+}
 header nav img {
     height: 25px;
     margin-right: 5px;
@@ -89,7 +93,7 @@ footer {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #C9F4B7;
+    /* background-color: #C9F4B7; */
 }
 #game {
     display: flex;
@@ -105,11 +109,17 @@ footer {
     border-radius: 5px;
     box-shadow: 1px 1px 5px 2px rgba(128, 128, 128, 0.534);
   }
-  
-#text {
+  #textp{
     max-width: 500px;
-    background-color: #0a0a23;
-    color: #fafafa;
+    padding: 10px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 1px 1px 5px 2px rgba(128, 128, 128, 0.534);
+  }
+#text {
+width: 500px;
+height: 200px;
+    
     padding: 10px;
     border-radius: 18px;
     text-align: center;

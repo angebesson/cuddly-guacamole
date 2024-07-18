@@ -17,26 +17,26 @@
                 <a href="#" class="navegador">♡</a>
                 <button href="#" id="button2">ELIGE TUS COLORES</button>
                 <a href="#" class="navegador">♡</a>
-                <a href="./pages/cart.html" class="navegador" id="cart"><img src="./resources/carritoPinta.webp" alt="carrito de compras"><span id="cuentaCarrito">0</span></a>
+                <a href="./pages/cart.html" class="navegador" id="cart"><img src="../resources/carritoPinta.webp" alt="carrito de compras"><span id="cuentaCarrito">0</span></a>
             </div>
         </nav>
     </header> 
     <main class="main-calculator">
-        <div id="game">
-            <div id="stats">
-              <span class="stat">PARED: <strong><span id="paredText">0</span></strong></span>
-              <span class="stat">METROS CUADRADOS: <strong><span id="m2Text">0</span></strong></span>
-              <span class="stat">LITROS: <strong><strong><span id="litrosText">0</span></strong></span>
-            </div>
-
-        </div>
-        <div id="controls">
-            <button id="button3">Go to store</button>
-            <button id="button4">Go to cave</button>
-            <button id="button5">Fight dragon</button>
-          </div>
-        <div id="text">
+         
+        <form>
+          <input type="text" id="num1" >
+          <input type="text" id="num2" >                  
+        </form>
+     
+      
+        <div id="textp">
           Te damos la bienvenida a tu nuevo proyecto !!! :) Con ésta calculadora puedes comenzar primero por medir en METROS tus paredes. Mide la ALTURA y el ANCHO. Ingresa los valores y obtendrás los METROS CUADRADOS a cubrir. También cuántos litros de pintura requieres POR MANO para cubrir tus paredes. </div>
+
+          <input type="number" class="num_uno" placeholder="Ingresa la altura">
+          <input type="number" class="num_dos" placeholder="Ingresa el ancho">
+          <button type="button" id="btn-calcular">Calcular</button>
+          <form action=""></form>
+          <div id="text"></div>
     </main>
     <footer></footer>
     <script src="../js/pinturas.js"></script>
