@@ -69,9 +69,12 @@ a:hover:not(#cart) {
 
 header nav {
     display: flex;
-    justify-content: space-between;
-    margin: 0 60px;
-}
+     align-items: center;
+  justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+};
+
 
 header nav div {
     display: flex;
@@ -116,8 +119,17 @@ footer {
 
 .presentacion img{
 height: 450px;
+width: 70vh;
 border-radius: 10px;
 box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.promos img{
+  height: 130px;
+  border-radius: 50%;
+  position: absolute;
+ bottom: 30%;
+ right: 20%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 /* CALCULADORA */
 .escondido{
@@ -128,7 +140,7 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* background-color: #C9F4B7; */
+   
 }
 .calculadora input{
     height: 45px;
@@ -145,7 +157,6 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-top: 20px;
   }
 #text {
-width: 500px;
 height: 200px;
     
     padding: 10px;
