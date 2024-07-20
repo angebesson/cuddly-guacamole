@@ -170,4 +170,51 @@ height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    
   }
+.paletaMesopotamia{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+ .paletaMesopotamia img{
+  border-radius: 5px;
+ }
+#producto-contenedor {
+  display: grid;
+  gap: 1rem;
+  max-width: 60rem;
+  margin: 60px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 30%;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  align-items: center;
+}
+.card img{
+  max-width: 80%;
+
+}
+.card .card-image .card-title {
+  display: flex;
+  color:#b48383;
+  position: unset;
+  text-align: center;
+  justify-content: space-around
+}
