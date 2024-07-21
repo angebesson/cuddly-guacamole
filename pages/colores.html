@@ -21,7 +21,7 @@
                 <a href="#" class="navegador">♡</a>
                 <a href="./colores.html">  <button id="button2">ELIGE TUS COLORES</button></a>
                 <a href="#" class="navegador">♡</a>
-                <a href="./carrito.html" class="navegador" id="cart"><img src="../resources/carritoPinta.webp" alt="carrito de compras"><span id="cuentaCarrito">0</span></a>
+                <a href="./carrito.html" class="navegador"id="cesta-carrito"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
             </div>
         </nav>
     </header>
@@ -32,18 +32,30 @@
         <img src="../resources/paleta.jfif" alt=" persona presenta muestrario de pinturas">
         <p>PALETA MESOPOTAMIA BA. Mesopotamia BA es un estudio de interiorismo que selecciona sus productos, diseños y estilos basados en una visión de cómo les gusta vivir, usar y compartir sus espacios. Guiados por su estilo personal y las últimas tendencias desarrollaron una paleta compuesta por nueve colores.</p>
     </div>
-    <!-- <div id="producto-contenedor">
+    
+    <div id="producto-contenedor">
 
-    </div> -->
-    <main id="producto-contenedor">
-
-    </main>
-  
+    </div>
+    
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+          <h3>Carrito</h3>
+          <button id="btn-cerrar-carrito"></button>
+          <div id="carrito-contenedor">
+    
+          </div>
+          <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+          <!-- <p>Producto</p>
+          <p>Precio</p>
+          <p id=cantidad${producto.id}>Cantidad</p>
+          <button class="btn waves-effect waves-ligth boton-eliminar" value="">X</button> -->
+        </div>
+      </div>
     </main>
     <footer>
         <p class="text-shadow">Creado con ♡ por Ange</p>
     </footer>
-   
+   <script src="../js/cart.js"></script>
     <script src="../js/comprar.js"></script>
     <script src="../js/pinturas.js"></script>
     <script src="../js/main.js"></script>
