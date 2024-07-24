@@ -9,9 +9,9 @@ productoContenedor.addEventListener('click', (event) => {
 });
 
 const validarProductoCarrito = (productoId) => {
-  const estaRepetido = carrito.some((producto) => producto.id == productoId);
+  const estaRepetida = carrito.some((producto) => producto.id == productoId);
 
-  if (estaRepetido) {
+  if (estaRepetida) {
     const producto = carrito.find((producto) => producto.id == productoId);
     producto.cantidad++;
     const cantidad = document.getElementById(`cantidad${producto.id}`);
@@ -76,22 +76,24 @@ const pintarCarrito = (carrito) => {
 
 
 const actualizarTotalCarrito = (carrito) => {
+  const litrosTotal = carrito.reduce((acc, producto) => acc + (producto.cantidad * producto.litros), 0);
   const cantidadTotal = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
   const compraTotal = carrito.reduce((acc, producto) => acc + (producto.cantidad * producto.precio), 0);
-  const litrosTotal = carrito.reduce((acc, producto) => acc + (producto.cantidad * producto.litros), 0);
+  
 
   pintarTotalesCarrito(cantidadTotal, compraTotal,litrosTotal);
   guardarCarritoStorage(carrito);
 };
 
 const pintarTotalesCarrito = (cantidadTotal, compraTotal,litrosTotal) => {
+  const litrosCarrito = document.getElementById('litrosTotal');
   const contadorCarrito = document.getElementById('contador-carrito');
   const precioTotal = document.getElementById('precioTotal');
-  const litrosCarrito = document.getElementById('litrosTotal');
-
+ 
+  litrosCarrito.innerText = litrosTotal;
   contadorCarrito.innerText = cantidadTotal;
   precioTotal.innerText = compraTotal;
-  litrosCarrito.innerText = litrosTotal;
+  
 };
 
 const guardarCarritoStorage = (carrito) => {
@@ -99,26 +101,8 @@ const guardarCarritoStorage = (carrito) => {
 };
 
 
-//   //modal
-
-const modalContenedor = document.querySelector('.modal-contenedor');
-const abrirCarrito = document.getElementById('cesta-carrito');
-const cerrarCarrito = document.getElementById('btn-cerrar-carrito');
-const modalCarrito = document.querySelector('.modal-carrito');
-
-abrirCarrito.addEventListener('click', () => {
-  modalContenedor.classList.toggle('modal-active')
-});
-
-cerrarCarrito.addEventListener('click', () => {
-  modalContenedor.classList.toggle('modal-active')
-});
-
-modalContenedor.addEventListener('click', () => {
-  cerrarCarrito.click()
-});
-
-modalCarrito.addEventListener('click', (event) => {
+const mostrarCarrito = document.querySelector('.mostrarCarrito');
+mostrarCarrito.addEventListener('click', (event) => {
   if (event.target.classList.contains('boton-eliminar')) {
     eliminarProductoCarrito(event.target.value);
   };

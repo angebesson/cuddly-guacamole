@@ -15,7 +15,15 @@ boton.addEventListener("click", () => {
   let alto = document.querySelector(".num_uno").value;
   let ancho = document.querySelector(".num_dos").value;
     	if (alto == "" || ancho == ""){
-		alert("Debes ingresar los metros");
+        Toastify({
+          text: "Ingresa los metros",
+          className: "info",
+          position: "left", 
+          style: {
+            background: "linear-gradient(to right,  #f6c8bd8f, #d481544d)",
+            color:"black"
+          }
+        }).showToast();
 	} else {
     let total = 0;
  for (let i = 1; i <= 3; i++) {

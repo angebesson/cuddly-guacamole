@@ -6,8 +6,6 @@ const pinturas = [
         tipo: "Interior",
         img:"../resources/rosaJapon.png",
         litros:1,
-        "button text":["uno","cuatro","diez"],
-        "button functions":[],
         precio: 11000,
         cantidad:1,
         stock: 10,

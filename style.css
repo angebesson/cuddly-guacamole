@@ -21,7 +21,7 @@
 }
 
 .gradient-background {
-  background: linear-gradient(to right, #f1e5e25b, #beaba14d);
+  background: linear-gradient(to right, #f1e5e255, #beaba14d);
 }
 
 /* variables de colores */
@@ -258,7 +258,7 @@ p {
 }
 
 
-.modal-carrito{
+.mostrarCarrito{
   display: flex;
   width: 50%;
   flex-direction: column;
