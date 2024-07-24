@@ -5,7 +5,7 @@ const pinturas = [
         color: "Rosa Japon",
         tipo: "Interior",
         img:"../resources/rosaJapon.png",
-        litros:[1,4,10],
+        litros:1,
         "button text":["uno","cuatro","diez"],
         "button functions":[],
         precio: 11000,
@@ -93,5 +93,3 @@ const pinturas = [
         stock: 10,
     },
 ]
-
-document.addEventListener('DOMContentLoaded', pintarProductos(pinturas));

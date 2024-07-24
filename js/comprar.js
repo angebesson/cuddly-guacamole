@@ -19,4 +19,3 @@ const pintarProductos = (pinturas) => {
     });
   };
 
-

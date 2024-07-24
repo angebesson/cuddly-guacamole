@@ -1,11 +1,16 @@
+document.addEventListener('DOMContentLoaded', () => {
+  pintarProductos(pinturas);
+  pintarCarrito(carrito);
+  actualizarTotalCarrito(carrito);
 
+});
 
 //CALCULADORA
 
 const text = document.querySelector("#text");
 const boton = document.getElementById("btn-calcular");
 
-text.innerHTML = "La superficie de tu pared es... "
+text.innerText ="La superficie de tu pared es... ";
 boton.addEventListener("click", () => {
   let alto = document.querySelector(".num_uno").value;
   let ancho = document.querySelector(".num_dos").value;

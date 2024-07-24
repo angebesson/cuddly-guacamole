@@ -17,7 +17,7 @@
                 <a href="#" class="navegador">♡</a>
               <a href="./colores.html">  <button id="button2">ELIGE TUS COLORES</button></a>
                 <a href="#" class="navegador">♡</a>
-                <a href="./carrito.html" class="navegador"id="cesta-carrito"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
+                <a href="./colores.html" class="navegador"id="cesta-carrito"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
             </div>
         </nav>
     </header> 
@@ -32,16 +32,19 @@
         <div id="textPresenta" >
           Te damos la bienvenida a tu nuevo proyecto !!! <i class="fa-solid fa-paint-roller"></i> <br>Para usar la calculadora puedes comenzar por medir en METROS tus paredes. <br> <i class="fa-solid fa-pen-ruler"></i>  Mide la ALTURA y el ANCHO de tu pared. <br>Ingresa los valores y obtendrás los METROS CUADRADOS a cubrir. <br>También cuántos litros de pintura requieres POR MANO para cubrir tus paredes. </div>
           <form action="" class="calculadora">
-          <input type="number" class="num_uno" placeholder="Ingresa la altura">
-          <input type="number" class="num_dos" placeholder="Ingresa el ancho">
+          <input type="number" class="num_uno" placeholder="Ingresa la altura" min="0">
+          <input type="number" class="num_dos" placeholder="Ingresa el ancho" min="0">
           <button type="button" id="btn-calcular">Calcular</button>
           </form>
           <div id="text"></div>
-          <div></div>
+          <div>
+                    </div>
     </main>
     <footer>
       <p class="text-shadow">Creado con ♡ por Ange</p>
     </footer>
+    <script src="../js/cart.js"></script>
+    <script src="../js/comprar.js"></script>
     <script src="../js/pinturas.js"></script>
     <script src="../js/main.js"></script>
 </body>
