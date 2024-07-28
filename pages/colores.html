@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colores disponibles</title>
     <link rel="icon" type="image/svg" href="../resources/brush-solid.svg">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://kit.fontawesome.com/8425a3d85b.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -46,7 +48,7 @@
         <div id="linkCarrito" class="modal-contenedor">
             <div class="mostrarCarrito">
                 <h3 class="text-shadow">Carrito de Compras <i class="fa-solid fa-fill"></i></h3>
-                <button id="btn-cerrar-carrito"></button>
+              
                 <div id="carrito-contenedor">
 
                 </div>
@@ -55,7 +57,7 @@
                     <p class="precioProducto">Total en litros: <span id="litrosTotal">0</span></p>
 
                 </div>
-           
+                <button type="button" id="comprar">Comprar</button>
             </div>
         </div>
     </main>

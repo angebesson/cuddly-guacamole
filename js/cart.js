@@ -107,3 +107,25 @@ mostrarCarrito.addEventListener('click', (event) => {
     eliminarProductoCarrito(event.target.value);
   };
 });
+
+
+
+function botonComprarCarrito (){
+  Toastify({
+    text: "Tu compra está procesada",
+    className: "info",
+    position: "center", 
+    style: {
+      background: "linear-gradient(to right,  #f6c8bd8f, #d481544d)",
+      color:"black"
+    }
+  }).showToast();
+  let carritoContenedor = document.getElementById('carrito-contenedor');
+  while (carritoContenedor.hasChildNodes()){
+    carritoContenedor.removeChild(carritoContenedor.firstChild);
+  }
+ }
+
+
+  const botonComprar = document.querySelector('#comprar');
+botonComprar.addEventListener("click", botonComprarCarrito );
