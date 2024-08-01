@@ -143,7 +143,9 @@ footer {
   right: 20%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.paletas{
 
+}
 /* CALCULADORA */
 .escondido {
   display: none;
@@ -156,8 +158,7 @@ footer {
   align-items: center;
 
 }
-
-.calculadora input {
+input {
   height: 45px;
   font-size: 18px;
   text-align: center;

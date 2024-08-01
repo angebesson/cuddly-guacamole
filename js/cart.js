@@ -1,12 +1,15 @@
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
+let carrito =  []|| JSON.parse(localStorage.getItem('carrito')) ;
 const productoContenedor = document.getElementById('producto-contenedor');
+const mostrarCarrito = document.querySelector('.mostrarCarrito');
+const botonComprar = document.querySelector('#comprar');
+const botonVaciar = document.getElementById('vaciar');
 
+if(productoContenedor){
 productoContenedor.addEventListener('click', (event) => {
   if (event.target.classList.contains('agregar')) {
     validarProductoCarrito(event.target.id);
   }
-});
+})};
 
 const validarProductoCarrito = (productoId) => {
   const estaRepetida = carrito.some((producto) => producto.id == productoId);
@@ -56,9 +59,8 @@ const eliminarProductoCarrito = (productoId) => {
 
 const pintarCarrito = (carrito) => {
   const carritoContenedor = document.getElementById('carrito-contenedor');
-
+  if(carritoContenedor){
   carritoContenedor.innerHTML = '';
-
   carrito.forEach(producto => {
     const div = document.createElement('div');
     div.classList.add('productoEnCarrito');
@@ -71,7 +73,7 @@ const pintarCarrito = (carrito) => {
         <button class="boton-eliminar" value="${producto.id}">Eliminar</button>
       `
     carritoContenedor.appendChild(div);
-  });
+  })};
 };
 
 
@@ -89,10 +91,10 @@ const pintarTotalesCarrito = (cantidadTotal, compraTotal, litrosTotal) => {
   const litrosCarrito = document.getElementById('litrosTotal');
   const contadorCarrito = document.getElementById('contador-carrito');
   const precioTotal = document.getElementById('precioTotal');
-
-  litrosCarrito.innerText = litrosTotal;
+if(litrosCarrito){litrosCarrito.innerText = litrosTotal;}
+  if(precioTotal){precioTotal.innerText = compraTotal;}
   contadorCarrito.innerText = cantidadTotal;
-  precioTotal.innerText = compraTotal;
+  
 
 };
 
@@ -101,12 +103,12 @@ const guardarCarritoStorage = (carrito) => {
 };
 
 
-const mostrarCarrito = document.querySelector('.mostrarCarrito');
+if(mostrarCarrito){
 mostrarCarrito.addEventListener('click', (event) => {
   if (event.target.classList.contains('boton-eliminar')) {
     eliminarProductoCarrito(event.target.value);
   };
-});
+})};
 
 function avisarCarritoVacío (){
   if( carrito.length === 0 ){
@@ -140,11 +142,11 @@ function botonComprarCarrito() {
 }
 
 
-const botonComprar = document.querySelector('#comprar');
-botonComprar.addEventListener("click", botonComprarCarrito);
+if(botonComprar){
+botonComprar.addEventListener("click", botonComprarCarrito)};
+if(botonVaciar){
+botonVaciar.addEventListener("click", vaciarCarrito)};
 
-
-const botonVaciar = document.getElementById('vaciar');
 function vaciarCarrito() {
   productoEnCarrito = Array.from(document.querySelectorAll('.productoEnCarrito'));
   for (const pintura of productoEnCarrito) {
@@ -158,4 +160,3 @@ function vaciarCarrito() {
   precioTotal.innerText = '';
  localStorage.removeItem('carrito')
 }
-botonVaciar.addEventListener("click", vaciarCarrito)

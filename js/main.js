@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const text = document.querySelector("#text");
 const boton = document.getElementById("btn-calcular");
-
-text.innerText ="La superficie de tu pared es... ";
+if(text){text.innerText ="La superficie de tu pared es... ";}
+if(boton){
 boton.addEventListener("click", () => {
   let alto = document.querySelector(".num_uno").value;
   let ancho = document.querySelector(".num_dos").value;
@@ -39,7 +39,7 @@ boton.addEventListener("click", () => {
 } 
 // alert(" Necesitas un total de " + total + " litros de pintura ")
 text.innerHTML += "\n" + " Necesitas un total de " + Math.ceil(total) + " litros de pintura";
-}});
+}})};
 
 
 //     alert(" Necesitas un total de " + total + " litros de pintura POR MANO")
@@ -51,3 +51,19 @@ function descuentoAmistad(compraTotal){
     compraTotal- 5000
   }
 }  
+
+//Generar paleta de colores
+
+const formPaleta = document.getElementById("form-paleta");
+const search = document.getElementById("search");
+
+formPaleta.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  console.log(search.value);
+})
+
+const getColorPalete = ()=>{
+
+  
+}

@@ -1,7 +1,7 @@
 
 const pintarProductos = (pinturas) => {
     const contenedor = document.getElementById("producto-contenedor");
-
+if(contenedor){
    pinturas.forEach(producto => {
       const div = document.createElement('div');
       div.classList.add('card');
@@ -16,6 +16,6 @@ const pintarProductos = (pinturas) => {
                         </div>
                        `
       contenedor.appendChild(div);
-    });
+    })};
   };
 
