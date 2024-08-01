@@ -143,7 +143,27 @@ footer {
   right: 20%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Generador de paletas */
+
+#entry-dropdown{
+  font-size: 24px;
+
+}
 .paletas{
+  display: flex;
+background-color: #e9f0f1;
+}
+.contiene-colores{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding:40px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#resultadoPaleta{
+  display: flex;
 
 }
 /* CALCULADORA */
