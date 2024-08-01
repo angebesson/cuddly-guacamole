@@ -260,7 +260,7 @@ p {
 
 .mostrarCarrito{
   display: flex;
-  width: 50%;
+  width: 80%;
   flex-direction: column;
   align-items: center;
   background-color: #C7EBF2;
@@ -297,9 +297,12 @@ p {
   border-radius: 18px;
   padding: 2px;
 }
-#comprar{
+.botones-cart{
+  display: flex;
+}
+#comprar, #vaciar{
   padding: 5px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 200;
   border: 1px solid #C49494;
 }

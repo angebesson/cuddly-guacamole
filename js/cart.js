@@ -20,7 +20,7 @@ const validarProductoCarrito = (productoId) => {
   } else {
     const producto = pinturas.find((producto) => producto.id == productoId);
     carrito.push(producto);
-   
+
     pintarProductoCarrito(producto);
     actualizarTotalCarrito(carrito);
   }
@@ -79,21 +79,21 @@ const actualizarTotalCarrito = (carrito) => {
   const litrosTotal = carrito.reduce((acc, producto) => acc + (producto.cantidad * producto.litros), 0);
   const cantidadTotal = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
   const compraTotal = carrito.reduce((acc, producto) => acc + (producto.cantidad * producto.precio), 0);
-  
 
-  pintarTotalesCarrito(cantidadTotal, compraTotal,litrosTotal);
+
+  pintarTotalesCarrito(cantidadTotal, compraTotal, litrosTotal);
   guardarCarritoStorage(carrito);
 };
 
-const pintarTotalesCarrito = (cantidadTotal, compraTotal,litrosTotal) => {
+const pintarTotalesCarrito = (cantidadTotal, compraTotal, litrosTotal) => {
   const litrosCarrito = document.getElementById('litrosTotal');
   const contadorCarrito = document.getElementById('contador-carrito');
   const precioTotal = document.getElementById('precioTotal');
- 
+
   litrosCarrito.innerText = litrosTotal;
   contadorCarrito.innerText = cantidadTotal;
   precioTotal.innerText = compraTotal;
-  
+
 };
 
 const guardarCarritoStorage = (carrito) => {
@@ -108,24 +108,54 @@ mostrarCarrito.addEventListener('click', (event) => {
   };
 });
 
+function avisarCarritoVacío (){
+  if( carrito.length === 0 ){
+    Toastify({
+      text: "El carrito está vacío",
+      className: "info",
+      position: "center", 
+      style: {
+        background: "linear-gradient(to right,  #f6c8bd8f, #d481544d)",
+        color:"black"
+      }
+    }).showToast();
+  }
+ };
 
-
-function botonComprarCarrito (){
+function botonComprarCarrito() {
+  avisarCarritoVacío()
   Toastify({
-    text: "Tu compra está procesada",
+   text: "Tu compra está procesada",
     className: "info",
-    position: "center", 
+    position: "center",
     style: {
       background: "linear-gradient(to right,  #f6c8bd8f, #d481544d)",
-      color:"black"
+      color: "black"
     }
   }).showToast();
   let carritoContenedor = document.getElementById('carrito-contenedor');
-  while (carritoContenedor.hasChildNodes()){
+  while (carritoContenedor.hasChildNodes()) {
     carritoContenedor.removeChild(carritoContenedor.firstChild);
   }
- }
+}
 
 
-  const botonComprar = document.querySelector('#comprar');
-botonComprar.addEventListener("click", botonComprarCarrito );
+const botonComprar = document.querySelector('#comprar');
+botonComprar.addEventListener("click", botonComprarCarrito);
+
+
+const botonVaciar = document.getElementById('vaciar');
+function vaciarCarrito() {
+  productoEnCarrito = Array.from(document.querySelectorAll('.productoEnCarrito'));
+  for (const pintura of productoEnCarrito) {
+    pintura.innerHTML = '';
+  }
+  const litrosCarrito = document.getElementById('litrosTotal');
+  const contadorCarrito = document.getElementById('contador-carrito');
+  const precioTotal = document.getElementById('precioTotal');
+  litrosCarrito.innerText = '';
+  contadorCarrito.innerText = '';
+  precioTotal.innerText = '';
+ localStorage.removeItem('carrito')
+}
+botonVaciar.addEventListener("click", vaciarCarrito)
