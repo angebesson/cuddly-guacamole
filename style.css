@@ -297,9 +297,17 @@ p {
   border-radius: 18px;
   padding: 2px;
 }
-#comprar{
+.botones-carrito{
+  display: flex;
+  flex-wrap: wrap;
+}
+#comprar,#vaciar{
   padding: 5px;
   font-size: 20px;
   font-weight: 200;
   border: 1px solid #C49494;
+}
+
+.agregar i{
+  height: 35px;
 }

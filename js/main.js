@@ -51,3 +51,9 @@ function descuentoAmistad(compraTotal){
     compraTotal- 5000
   }
 }  
+
+
+
+//acceso condicional a un objeto si uso ? me manda al or si es null, mejor control de errores
+// console.log (usuario?.nombre || "El usuario no existe")
+//tambien sobre propiedades q sean objetos usuario?.cursos?.javascript
