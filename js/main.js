@@ -29,21 +29,13 @@ boton.addEventListener("click", () => {
  for (let i = 1; i <= 3; i++) {
        let superficie = (ancho * alto);
     let pintura = superficie / 12;
-      // alert("Pared nro " + i);
-    // alert("Superficie de tu pared es " + superficie + " metros cuadrados");
-    // alert("Necesitas " + pintura + " litros de pintura por mano para cubrir tu pared");
-    total += pintura;
+       total += pintura;
     text.innerText = "Cantidad de manos: " + i + "\n";
     text.innerText += "La superficie de tu pared es "+ superficie + "  metros cuadrados. " + "\n";
     text.innerHTML += "Necesitas " + pintura.toFixed(2) + " litros de pintura por mano para cubrir tu pared." + "\n";
 } 
-// alert(" Necesitas un total de " + total + " litros de pintura ")
 text.innerHTML += "\n" + " Necesitas un total de " + Math.ceil(total) + " litros de pintura";
 }})};
-
-
-//     alert(" Necesitas un total de " + total + " litros de pintura POR MANO")
-
 //Descuento
 
 function descuentoAmistad(compraTotal){
@@ -145,8 +137,4 @@ const mostrarColor = (data)=> {
  if(resultadoColor){resultadoColor.appendChild(div);};
 
 }
-
-
-
-// https://www.thecolorapi.com/id?format=svg&hex=284614
 
