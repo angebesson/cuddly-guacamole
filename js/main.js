@@ -44,13 +44,6 @@ function descuentoAmistad(compraTotal){
   }
 }  
 
-<<<<<<< HEAD
-
-
-//acceso condicional a un objeto si uso ? me manda al or si es null, mejor control de errores
-// console.log (usuario?.nombre || "El usuario no existe")
-//tambien sobre propiedades q sean objetos usuario?.cursos?.javascript
-=======
 //Generar paleta de colores
 const entryDropdown = document.getElementById('entry-dropdown');
 const formPaleta = document.getElementById("form-paleta");
@@ -145,4 +138,3 @@ const mostrarColor = (data)=> {
 
 }
 
->>>>>>> branch1

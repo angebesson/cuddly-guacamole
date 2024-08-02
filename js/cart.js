@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 let carrito = [] || JSON.parse(localStorage.getItem('carrito'));
 
-=======
-let carrito =  []|| JSON.parse(localStorage.getItem('carrito')) ;
->>>>>>> branch1
 const productoContenedor = document.getElementById('producto-contenedor');
 const mostrarCarrito = document.querySelector('.mostrarCarrito');
 const botonComprar = document.querySelector('#comprar');
@@ -134,17 +130,10 @@ function avisarCarritoVacío (){
   }
  };
 
-<<<<<<< HEAD
 function botonComprarCarrito (){
   avisarCarritoVacío()
     Toastify({
     text: "Tu compra está procesada",
-=======
-function botonComprarCarrito() {
-  avisarCarritoVacío()
-  Toastify({
-   text: "Tu compra está procesada",
->>>>>>> branch1
     className: "info",
     position: "center",
     style: {
@@ -155,13 +144,7 @@ function botonComprarCarrito() {
   let carritoContenedor = document.getElementById('carrito-contenedor');
   while (carritoContenedor.hasChildNodes()) {
     carritoContenedor.removeChild(carritoContenedor.firstChild);
-<<<<<<< HEAD
   }} 
-=======
-  }
-}
-
->>>>>>> branch1
 
 if(botonComprar){
 botonComprar.addEventListener("click", botonComprarCarrito)};
