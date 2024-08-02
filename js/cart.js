@@ -57,6 +57,11 @@ const eliminarProductoCarrito = (productoId) => {
   actualizarTotalCarrito(carrito);
 };
 
+function vaciarCarrito(producto) {
+ carrito.splice(producto, carrito.length);
+      pintarCarrito(carrito);
+    actualizarTotalCarrito(carrito);
+}
 const pintarCarrito = (carrito) => {
   const carritoContenedor = document.getElementById('carrito-contenedor');
   if(carritoContenedor){
@@ -147,16 +152,3 @@ botonComprar.addEventListener("click", botonComprarCarrito)};
 if(botonVaciar){
 botonVaciar.addEventListener("click", vaciarCarrito)};
 
-function vaciarCarrito() {
-  productoEnCarrito = Array.from(document.querySelectorAll('.productoEnCarrito'));
-  for (const pintura of productoEnCarrito) {
-    pintura.innerHTML = '';
-  }
-  const litrosCarrito = document.getElementById('litrosTotal');
-  const contadorCarrito = document.getElementById('contador-carrito');
-  const precioTotal = document.getElementById('precioTotal');
-  litrosCarrito.innerText = '';
-  contadorCarrito.innerText = '';
-  precioTotal.innerText = '';
- localStorage.removeItem('carrito')
-}
