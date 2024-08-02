@@ -144,6 +144,9 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 /* Generador de paletas */
+.contiene-color img{
+  border-radius: 18px;
+}
 
 #entry-dropdown{
   font-size: 24px;
