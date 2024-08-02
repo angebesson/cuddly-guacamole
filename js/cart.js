@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 let carrito = [] || JSON.parse(localStorage.getItem('carrito'));
 
+=======
+let carrito =  []|| JSON.parse(localStorage.getItem('carrito')) ;
+>>>>>>> branch1
 const productoContenedor = document.getElementById('producto-contenedor');
+const mostrarCarrito = document.querySelector('.mostrarCarrito');
+const botonComprar = document.querySelector('#comprar');
+const botonVaciar = document.getElementById('vaciar');
 
+if(productoContenedor){
 productoContenedor.addEventListener('click', (event) => {
   if (event.target.classList.contains('agregar')) {
     validarProductoCarrito(event.target.id);
   }
-});
+})};
 
 const validarProductoCarrito = (productoId) => {
   const estaRepetida = carrito.some((producto) => producto.id == productoId);
@@ -20,7 +28,7 @@ const validarProductoCarrito = (productoId) => {
   } else {
     const producto = pinturas.find((producto) => producto.id == productoId);
     carrito.push(producto);
-   
+
     pintarProductoCarrito(producto);
     actualizarTotalCarrito(carrito);
   }
@@ -54,11 +62,15 @@ const eliminarProductoCarrito = (productoId) => {
   actualizarTotalCarrito(carrito);
 };
 
+function vaciarCarrito(producto) {
+ carrito.splice(producto, carrito.length);
+      pintarCarrito(carrito);
+    actualizarTotalCarrito(carrito);
+}
 const pintarCarrito = (carrito) => {
   const carritoContenedor = document.getElementById('carrito-contenedor');
-
+  if(carritoContenedor){
   carritoContenedor.innerHTML = '';
-
   carrito.forEach(producto => {
     const div = document.createElement('div');
     div.classList.add('productoEnCarrito');
@@ -71,7 +83,7 @@ const pintarCarrito = (carrito) => {
         <button class="boton-eliminar" value="${producto.id}">Eliminar</button>
       `
     carritoContenedor.appendChild(div);
-  });
+  })};
 };
 
 
@@ -79,21 +91,21 @@ const actualizarTotalCarrito = (carrito) => {
   const litrosTotal = carrito.reduce((acc, producto) => acc + (producto.cantidad * producto.litros), 0);
   const cantidadTotal = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
   const compraTotal = carrito.reduce((acc, producto) => acc + (producto.cantidad * producto.precio), 0);
-  
 
-  pintarTotalesCarrito(cantidadTotal, compraTotal,litrosTotal);
+
+  pintarTotalesCarrito(cantidadTotal, compraTotal, litrosTotal);
   guardarCarritoStorage(carrito);
 };
 
-const pintarTotalesCarrito = (cantidadTotal, compraTotal,litrosTotal) => {
+const pintarTotalesCarrito = (cantidadTotal, compraTotal, litrosTotal) => {
   const litrosCarrito = document.getElementById('litrosTotal');
   const contadorCarrito = document.getElementById('contador-carrito');
   const precioTotal = document.getElementById('precioTotal');
- 
-  litrosCarrito.innerText = litrosTotal;
+if(litrosCarrito){litrosCarrito.innerText = litrosTotal;}
+  if(precioTotal){precioTotal.innerText = compraTotal;}
   contadorCarrito.innerText = cantidadTotal;
-  precioTotal.innerText = compraTotal;
   
+
 };
 
 const guardarCarritoStorage = (carrito) => {
@@ -101,12 +113,12 @@ const guardarCarritoStorage = (carrito) => {
 };
 
 
-const mostrarCarrito = document.querySelector('.mostrarCarrito');
+if(mostrarCarrito){
 mostrarCarrito.addEventListener('click', (event) => {
   if (event.target.classList.contains('boton-eliminar')) {
     eliminarProductoCarrito(event.target.value);
   };
-});
+})};
 
 function avisarCarritoVacío (){
   if( carrito.length === 0 ){
@@ -122,21 +134,37 @@ function avisarCarritoVacío (){
   }
  };
 
+<<<<<<< HEAD
 function botonComprarCarrito (){
   avisarCarritoVacío()
     Toastify({
     text: "Tu compra está procesada",
+=======
+function botonComprarCarrito() {
+  avisarCarritoVacío()
+  Toastify({
+   text: "Tu compra está procesada",
+>>>>>>> branch1
     className: "info",
-    position: "center", 
+    position: "center",
     style: {
       background: "linear-gradient(to right,  #f6c8bd8f, #d481544d)",
-      color:"black"
+      color: "black"
     }
   }).showToast();
   let carritoContenedor = document.getElementById('carrito-contenedor');
-  while (carritoContenedor.hasChildNodes()){
+  while (carritoContenedor.hasChildNodes()) {
     carritoContenedor.removeChild(carritoContenedor.firstChild);
+<<<<<<< HEAD
   }} 
+=======
+  }
+}
 
-  const botonComprar = document.querySelector('#comprar');
-botonComprar.addEventListener("click", botonComprarCarrito );
+>>>>>>> branch1
+
+if(botonComprar){
+botonComprar.addEventListener("click", botonComprarCarrito)};
+if(botonVaciar){
+botonVaciar.addEventListener("click", vaciarCarrito)};
+

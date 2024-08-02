@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +9,114 @@
     <script src="https://kit.fontawesome.com/8425a3d85b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <header  >
+    <header>
         <nav>
             <a href="./index.html"> <img src="./resources/pintaLogo.webp" alt="Logo" class="logo"></a>
             <div id="nav">
-               <a href="./pages/calculadora.html"> <button  id="button1">CALCULÁ TU PINTURA</button></a>
+                <a href="./pages/calculadora.html"> <button id="button1">CALCULÁ TU PINTURA</button></a>
                 <a href="#" class="navegador">♡</a>
-              <a href="./pages/colores.html">  <button id="button2">ELIGE TUS COLORES</button></a>
+                <a href="./pages/colores.html"> <button id="button2">ELIGE TUS COLORES</button></a>
                 <a href="#" class="navegador">♡</a>
-                <a href="./pages/colores.html" class="navegador"id="cesta-carrito"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
+                <a href="./pages/colores.html" class="navegador" id="cesta-carrito"><i
+                        class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
             </div>
         </nav>
     </header>
     <main class="main-index">
+        
+        <div class="presentaPintaTuVida">
+            <img src="./resources/introPinta.png" alt="texto pinta tu vida con brochazos color pastel de fondo">
+            <p>PINTA TU VIDA!  es una propuesta que te ayuda a organizarte en tu proyecto de poner color en tus ambientes y que logres llevar a cabo tu visión de cómo te gusta vivir, usar y compartir los espacios. </p>
+           
+        </div>
+        <p>Puedes comenzar buscando inspiración en colores con el botón <i class="fa-solid fa-circle-arrow-down"></i></p>
+        <div class="generarColores">
+          
+            <button class="btn" type="button" id="getColor">
+                <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
+                    class="sparkle">
+                    <path
+                        d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+                    </path>
+                </svg>
+
+                <span class="text">Genera tu color</span>
+            </button>
+            <div id="resultadoCodigo"></div>
+            <div id="resultadoColor"></div>
+
+            <img src="" alt="">
+            <h3 id="colorName"></h3>
+        </div>
         <div class="promos">
             <img src="./resources/descuento.gif" alt="texto codigo amistad con fondo confeti">
-            </div>
-<div class="presentacion">
-    <img src="./resources/introPinta.webp" alt="Pinta tu vida con brochazos de colores pastel de fondo">
-</div>
+        </div>
+        <p>Si te gusta un color, copias el código y eliges paletas combinadas <i class="fa-solid fa-circle-arrow-down"></i></p>
+       
+        <div class="paletas">
+            <form id="form-paleta">
+                <div class="searchBox">
+
+                    <input id="search" class="searchInput" type="text" name="" placeholder="Ingresa el código">
+                    <button class="searchButton" href="#">
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+                            <g clip-path="url(#clip0_2_17)">
+                                <g filter="url(#filter0_d_2_17)">
+                                    <path
+                                        d="M23.7953 23.9182L19.0585 19.1814M19.0585 19.1814C19.8188 18.4211 20.4219 17.5185 20.8333 16.5251C21.2448 15.5318 21.4566 14.4671 21.4566 13.3919C21.4566 12.3167 21.2448 11.252 20.8333 10.2587C20.4219 9.2653 19.8188 8.36271 19.0585 7.60242C18.2982 6.84214 17.3956 6.23905 16.4022 5.82759C15.4089 5.41612 14.3442 5.20435 13.269 5.20435C12.1938 5.20435 11.1291 5.41612 10.1358 5.82759C9.1424 6.23905 8.23981 6.84214 7.47953 7.60242C5.94407 9.13789 5.08145 11.2204 5.08145 13.3919C5.08145 15.5634 5.94407 17.6459 7.47953 19.1814C9.01499 20.7168 11.0975 21.5794 13.269 21.5794C15.4405 21.5794 17.523 20.7168 19.0585 19.1814Z"
+                                        stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                        shape-rendering="crispEdges"></path>
+                                </g>
+                            </g>
+                            <defs>
+                                <filter id="filter0_d_2_17" x="-0.418549" y="3.70435" width="29.7139" height="29.7139"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha">
+                                    </feColorMatrix>
+                                    <feOffset dy="4"></feOffset>
+                                    <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                                    <feComposite in2="hardAlpha" operator="out"></feComposite>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0">
+                                    </feColorMatrix>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_17">
+                                    </feBlend>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_17"
+                                        result="shape"></feBlend>
+                                </filter>
+                                <clipPath id="clip0_2_17">
+                                    <rect width="28.0702" height="28.0702" fill="white"
+                                        transform="translate(0.403503 0.526367)"></rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+
+                    </button>
+                </div>
+
+                <label for="entry-dropdown">Elige la combinación:</label>
+                <select name="options" id="entry-dropdown">
+                    <option value="monochrome" selected>monochrome</option>
+                    <option value=" monochrome-dark"> monochrome-dark </option>
+                    <option value="monochrome-light">monochrome-light</option>
+                    <option value="analogic">analogic</option>
+                    <option value="complement">complement</option>
+                    <option value=" analogic-complement"> analogic-complement</option>
+                    <option value="triad">triad</option>
+                    <option value="quad">quad</option>
+                </select>
+            </form>
+        </div>
+        <div id="resultadoPaleta"></div>
+
+
 
     </main>
     <footer>
@@ -38,4 +127,5 @@
     <script src="./js/pinturas.js"></script>
     <script src="./js/main.js"></script>
 </body>
+
 </html>
