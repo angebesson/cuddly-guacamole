@@ -114,3 +114,4 @@ formPaleta.addEventListener("submit", (e) => {
 // }
 
 // https://www.thecolorapi.com/id?format=svg&hex=284614
+
