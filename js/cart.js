@@ -8,7 +8,17 @@ const botonVaciar = document.getElementById('vaciar');
 if(productoContenedor){
 productoContenedor.addEventListener('click', (event) => {
   if (event.target.classList.contains('agregar')) {
-    validarProductoCarrito(event.target.id);
+        validarProductoCarrito(event.target.id);
+        Toastify({
+          text: "Agregaste la pintura al carrito\n\n :)",
+          className: "info",
+          gravity: "bottom",
+          position: "right", 
+          style: {
+            background: "linear-gradient(to right,  #f6c8bd8f, #d481544d)",
+            color:"black"
+          }
+        }).showToast();
   }
 })};
 
@@ -53,13 +63,32 @@ const eliminarProductoCarrito = (productoId) => {
     ? carrito.splice(productoIndex, 1)
     : carrito[productoIndex].cantidad--
 
-
+    Toastify({
+      text: "Quitaste la pintura de tu compra",
+      className: "info",
+      gravity: "bottom",
+      position: "right", 
+      style: {
+        background: "linear-gradient(to right,  #f6c8bd8f, #d481544d)",
+        color:"black"
+      }
+    }).showToast();
   pintarCarrito(carrito);
   actualizarTotalCarrito(carrito);
 };
 
 function vaciarCarrito(producto) {
  carrito.splice(producto, carrito.length);
+ Toastify({
+  text: "Haz vaciado tu \n carrito de compras",
+  className: "info",
+  gravity: "bottom",
+  position: "right", 
+  style: {
+    background: "linear-gradient(to right,  #f6c8bd8f, #d481544d)",
+    color:"black"
+  }
+}).showToast();
       pintarCarrito(carrito);
     actualizarTotalCarrito(carrito);
 }

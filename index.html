@@ -13,11 +13,11 @@
 <body>
     <header>
         <nav>
-            <a href="./index.html"> <img src="./resources/pintaLogo.webp" alt="Logo" class="logo"></a>
+            <a href="./index.html"> <img src="./resources/introPinta.png" alt="Logo" class="logo"></a>
             <div id="nav">
                 <a href="./pages/calculadora.html"> <button id="button1">CALCULÁ TU PINTURA</button></a>
                 <a href="#" class="navegador">♡</a>
-                <a href="./pages/colores.html"> <button id="button2">ELIGE TUS COLORES</button></a>
+                <a href="./pages/colores.html"> <button id="button2">COMPRA TUS COLORES</button></a>
                 <a href="#" class="navegador">♡</a>
                 <a href="./pages/colores.html" class="navegador" id="cesta-carrito"><i
                         class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></a>
@@ -25,15 +25,15 @@
         </nav>
     </header>
     <main class="main-index">
-        
+
         <div class="presentaPintaTuVida">
-            <img src="./resources/introPinta.png" alt="texto pinta tu vida con brochazos color pastel de fondo">
-            <p>PINTA TU VIDA!  es una propuesta que te ayuda a organizarte en tu proyecto de poner color en tus ambientes y que logres llevar a cabo tu visión de cómo te gusta vivir, usar y compartir los espacios. </p>
-           
+            <p>PINTA TU VIDA! es una propuesta que te ayuda a organizarte en tu proyecto de poner color en tus
+                ambientes. </p>
+                <p>Puedes comenzar buscando inspiración en colores con el botón <i class="fa-solid fa-circle-arrow-down"></i>
+                </p>
         </div>
-        <p>Puedes comenzar buscando inspiración en colores con el botón <i class="fa-solid fa-circle-arrow-down"></i></p>
-        <div class="generarColores">
-          
+               <div class="generarColores">
+
             <button class="btn" type="button" id="getColor">
                 <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
                     class="sparkle">
@@ -50,12 +50,11 @@
             <img src="" alt="">
             <h3 id="colorName"></h3>
         </div>
-        <div class="promos">
-            <img src="./resources/descuento.gif" alt="texto codigo amistad con fondo confeti">
-        </div>
-        <p>Si te gusta un color, copias el código y eliges paletas combinadas <i class="fa-solid fa-circle-arrow-down"></i></p>
-       
+            
         <div class="paletas">
+            <p>Si te gusta un color, copias el código y eliges paletas combinadas <i
+                class="fa-solid fa-circle-arrow-down"></i></p>
+
             <form id="form-paleta">
                 <div class="searchBox">
 
@@ -112,9 +111,11 @@
                     <option value="triad">triad</option>
                     <option value="quad">quad</option>
                 </select>
+                <div id="resultadoPaleta"></div>
             </form>
+            
         </div>
-        <div id="resultadoPaleta"></div>
+        
 
 
 
