@@ -162,7 +162,7 @@ function avisarCarritoVacío (){
 function botonComprarCarrito (){
   avisarCarritoVacío()
     Toastify({
-    text: "Tu compra está procesada",
+    text: "Tu compra está procesada \n\n Gracias por elegirnos :)",
     className: "info",
     position: "center",
     style: {
