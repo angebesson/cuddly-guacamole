@@ -121,7 +121,7 @@ document.getElementById('getColor').addEventListener('click', function (evt) {
     getColor(colorRandom)
   }
   resultadoCodigo.innerHTML = "";
-  if (resultadoCodigo) { resultadoCodigo.appendChild(h3); };
+  if (resultadoCodigo) {resultadoCodigo.appendChild(h3); };
 });
 
 function getRandomHex() {
