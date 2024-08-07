@@ -25,15 +25,15 @@ if (boton) {
         }
       }).showToast();
     } else {
-      let total = 0;
-      for (let i = 1; i <= 3; i++) {
-        let superficie = (ancho * alto);
-        let pintura = superficie / 12;
-        total += pintura;
-        text.innerText = "Cantidad de manos: " + i + "\n";
-        text.innerText += "La superficie de tu pared es " + superficie + "  metros cuadrados. " + "\n";
-        text.innerHTML += "Necesitas " + pintura.toFixed(2) + " litros de pintura por mano para cubrir tu pared." + "\n";
-      }
+let total = 0;
+      let manos = 3;
+      let superficie = (ancho * alto);
+      let pintura = superficie / 12;
+      total = pintura * manos;
+      text.innerText = "Cantidad de manos: " + manos + "\n";
+      text.innerText += "La superficie de tu pared es " + superficie + "  metros cuadrados. " + "\n";
+      text.innerHTML += "Necesitas " + pintura.toFixed(2) + " litros de pintura por mano para cubrir tu pared." + "\n";
+      
       text.innerHTML += "\n" + " Necesitas un total de " + Math.ceil(total) + " litros de pintura";
     }
   })
@@ -62,8 +62,6 @@ const entryDropdown = document.getElementById('entry-dropdown');
 const formPaleta = document.getElementById("form-paleta");
 const search = document.getElementById("search");
 const resultadoPaleta = document.getElementById("resultadoPaleta")
-let color = search.value;
-let mode = entryDropdown.value;
 const resultadoColor = document.getElementById("resultadoColor")
 
 const getColorPalete = async (color, mode) => {
