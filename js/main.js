@@ -57,13 +57,6 @@ if (document.getElementById('interruptor')) {
 }
 
 
-
-function descuentoAmistad(compraTotal) {
-  if (compraTotal >= 55000) {
-    compraTotal - 5000
-  }
-}
-
 //Generar paleta de colores
 const entryDropdown = document.getElementById('entry-dropdown');
 const formPaleta = document.getElementById("form-paleta");
