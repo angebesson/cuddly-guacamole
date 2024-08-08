@@ -1,6 +1,6 @@
 
 
-const actualizarIconoCarrito =(carrito)=>{
+const actualizarIconoCarrito =(cantidadTotal)=>{
   const contadorCarrito = document.getElementById('contador-carrito');
   if(contadorCarrito){contadorCarrito.innerText = cantidadTotal;}
 }
@@ -15,8 +15,7 @@ const getColorPalete = async (color, mode) => {
   const response = await fetch(`https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}`);
   const data = await response.json();
   mostrarPaleta(data);
-  console.log(data)
-}
+  }
 
 const mostrarPaleta = (data) => {
   const paleta = data.image.bare;
@@ -33,8 +32,6 @@ const mostrarPaleta = (data) => {
  `
   resultadoPaleta.innerHTML = "";
   if (resultadoPaleta) { resultadoPaleta.appendChild(div); };
-
-
 }
 
 
