@@ -5,6 +5,26 @@ const mostrarCarrito = document.querySelector('.mostrarCarrito');
 const botonComprar = document.querySelector('#comprar');
 const botonVaciar = document.getElementById('vaciar');
 
+const pintarCarrito = (carrito) => {
+  const carritoContenedor = document.getElementById('carrito-contenedor');
+  if(carritoContenedor){
+  carritoContenedor.innerHTML = '';
+  carrito.forEach(producto => {
+    const div = document.createElement('div');
+    div.classList.add('productoEnCarrito');
+
+    div.innerHTML += `
+        <p>${producto.color}</p>
+        <img src=${producto.img}>
+        <p>$ ${producto.precio}</p>
+        <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad} </p>
+        <button class="boton-eliminar" value="${producto.id}">Eliminar</button>
+      `
+    carritoContenedor.appendChild(div);
+  })};
+};
+
+
 if(productoContenedor){
 productoContenedor.addEventListener('click', (event) => {
   if (event.target.classList.contains('agregar')) {
@@ -91,25 +111,6 @@ function vaciarCarrito(producto) {
       pintarCarrito(carrito);
     actualizarTotalCarrito(carrito);
 }
-const pintarCarrito = (carrito) => {
-  const carritoContenedor = document.getElementById('carrito-contenedor');
-  if(carritoContenedor){
-  carritoContenedor.innerHTML = '';
-  carrito.forEach(producto => {
-    const div = document.createElement('div');
-    div.classList.add('productoEnCarrito');
-
-    div.innerHTML += `
-        <p>${producto.color}</p>
-        <img src=${producto.img}>
-        <p>$ ${producto.precio}</p>
-        <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad} </p>
-        <button class="boton-eliminar" value="${producto.id}">Eliminar</button>
-      `
-    carritoContenedor.appendChild(div);
-  })};
-};
-
 
 const actualizarTotalCarrito = (carrito) => {
   const litrosTotal = carrito.reduce((acc, producto) => acc + (producto.cantidad * producto.litros), 0);
@@ -128,10 +129,14 @@ const pintarTotalesCarrito = (cantidadTotal, compraTotal, litrosTotal) => {
 if(litrosCarrito){litrosCarrito.innerText = litrosTotal;}
   if(precioTotal){precioTotal.innerText = compraTotal;}
   contadorCarrito.innerText = cantidadTotal;
+  };
+
+
+  // const actualizarIconoCarrito =()=>{
+  //   const contadorCarrito = document.getElementById('contador-carrito');
+  //   if(contadorCarrito){contadorCarrito.innerText = cantidadTotal;}
+  // }
   
-
-};
-
 const guardarCarritoStorage = (carrito) => {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 };

@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', () => {
+  pintarProductos(pinturas);
+  pintarCarrito(carrito);
+  actualizarTotalCarrito(carrito);
+
+});
+
 const pintarProductos = (pinturas) => {
     const contenedor = document.getElementById("producto-contenedor");
 
