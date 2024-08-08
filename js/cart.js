@@ -131,11 +131,6 @@ if(litrosCarrito){litrosCarrito.innerText = litrosTotal;}
   contadorCarrito.innerText = cantidadTotal;
   };
 
-
-  // const actualizarIconoCarrito =()=>{
-  //   const contadorCarrito = document.getElementById('contador-carrito');
-  //   if(contadorCarrito){contadorCarrito.innerText = cantidadTotal;}
-  // }
   
 const guardarCarritoStorage = (carrito) => {
   localStorage.setItem('carrito', JSON.stringify(carrito));
@@ -177,6 +172,7 @@ function botonComprarCarrito (){
   let carritoContenedor = document.getElementById('carrito-contenedor');
   while (carritoContenedor.hasChildNodes()) {
     carritoContenedor.removeChild(carritoContenedor.firstChild);
+    vaciarCarrito()
   }} 
 
 if(botonComprar){
