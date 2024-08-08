@@ -1,4 +1,4 @@
-let carrito = [] || JSON.parse(localStorage.getItem('carrito'));
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 const productoContenedor = document.getElementById('producto-contenedor');
 const mostrarCarrito = document.querySelector('.mostrarCarrito');
@@ -42,7 +42,6 @@ const validarProductoCarrito = (productoId) => {
 
 const pintarProductoCarrito = (producto) => {
   const carritoContenedor = document.getElementById("carrito-contenedor");
-
   const div = document.createElement('div');
   div.classList.add('productoEnCarrito');
 

@@ -49,13 +49,12 @@ if (document.getElementById('interruptor')) {
   interruptor.onclick = () => {
     interruptor.classList.toggle('active');
     if (interruptor.className == 'theme-switch__checkbox active') {
-      mainCalculadora.classList.add('dark')
+      mainCalculadora.classList.toggle('dark')
     } else {
-      mainCalculadora.classList.remove('dark')
+      mainCalculadora.classList.toggle('dark')
     }
   }
 }
-
 
 //Generar paleta de colores
 const entryDropdown = document.getElementById('entry-dropdown');
