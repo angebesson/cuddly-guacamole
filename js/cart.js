@@ -4,31 +4,31 @@ const productoContenedor = document.getElementById('producto-contenedor');
 const mostrarCarrito = document.querySelector('.mostrarCarrito');
 const botonComprar = document.querySelector('#comprar');
 const botonVaciar = document.getElementById('vaciar');
+const carritoContenedor = document.getElementById("carrito-contenedor");
+let cantidad = 0 + (carrito.length)
 
-const pintarCarrito = (carrito) => {
-  const carritoContenedor = document.getElementById('carrito-contenedor');
+const pintarProductoCarrito = () => {
+  const carritoContenedor = document.getElementById("carrito-contenedor");
   if(carritoContenedor){
-  carritoContenedor.innerHTML = '';
-  carrito.forEach(producto => {
-    const div = document.createElement('div');
-    div.classList.add('productoEnCarrito');
+    carritoContenedor.innerHTML = '';
+    carrito.forEach(producto => {
+  const div = document.createElement('div');
+  div.classList.add('productoEnCarrito');
 
-    div.innerHTML += `
-        <p>${producto.color}</p>
-        <img src=${producto.img}>
-        <p>$ ${producto.precio}</p>
-        <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad} </p>
-        <button class="boton-eliminar" value="${producto.id}">Eliminar</button>
-      `
-    carritoContenedor.appendChild(div);
-  })};
+  div.innerHTML += `
+      <p>${producto.producto.color}</p>
+      <img src=${producto.producto.img}>
+      <p>$ ${producto.producto.precio}</p>
+      <p id=cantidad${producto.producto.id}>Cantidad: ${producto.cantidad}</p>
+      <button class="boton-eliminar" value="${producto.producto.id}">Eliminar</button>
+    `
+  carritoContenedor.appendChild(div)});}
 };
-
 
 if(productoContenedor){
 productoContenedor.addEventListener('click', (event) => {
   if (event.target.classList.contains('agregar')) {
-        validarProductoCarrito(event.target.id);
+    agregarProductoCarrito(event.target.id);
         Toastify({
           text: "Agregaste la pintura al carrito\n\n :)",
           className: "info",
@@ -42,47 +42,17 @@ productoContenedor.addEventListener('click', (event) => {
   }
 })};
 
-const validarProductoCarrito = (productoId) => {
-  const estaRepetida = carrito.some((producto) => producto.id == productoId);
-
-  if (estaRepetida) {
-    const producto = carrito.find((producto) => producto.id == productoId);
-    producto.cantidad++;
-    const cantidad = document.getElementById(`cantidad${producto.id}`);
-    cantidad.textContent = `Cantidad: ${producto.cantidad}`
-    actualizarTotalCarrito(carrito);
-  } else {
-    const producto = pinturas.find((producto) => producto.id == productoId);
-    carrito.push(producto);
-
-    pintarProductoCarrito(producto);
-    actualizarTotalCarrito(carrito);
-  }
-};
-
-const pintarProductoCarrito = (producto) => {
-  const carritoContenedor = document.getElementById("carrito-contenedor");
-  const div = document.createElement('div');
-  div.classList.add('productoEnCarrito');
-
-  div.innerHTML += `
-      <p>${producto.color}</p>
-      <img src=${producto.img}>
-      <p>$ ${producto.precio}</p>
-      <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
-      <button class="boton-eliminar" value="${producto.id}">Eliminar</button>
-    `
-  carritoContenedor.appendChild(div);
-};
+const agregarProductoCarrito = (item) =>{
+  const producto = pinturas.find((producto) => producto.id == item);
+  carrito.push({producto: producto, cantidad: 1});
+  pintarProductoCarrito();
+  actualizarTotalCarrito(carrito);
+}
 
 const eliminarProductoCarrito = (productoId) => {
   const productoIndex = carrito.findIndex((producto) => producto.id == productoId);
-
-  carrito[productoIndex].cantidad === 1
-    ? carrito.splice(productoIndex, 1)
-    : carrito[productoIndex].cantidad--
-
-    Toastify({
+  carrito.splice(productoIndex, 1)
+     Toastify({
       text: "Quitaste la pintura de tu compra",
       className: "info",
       gravity: "bottom",
@@ -92,13 +62,14 @@ const eliminarProductoCarrito = (productoId) => {
         color:"black"
       }
     }).showToast();
-  pintarCarrito(carrito);
-  actualizarTotalCarrito(carrito);
+    pintarProductoCarrito();  
+    actualizarTotalCarrito(carrito);
 };
 
-function vaciarCarrito(producto) {
- carrito.splice(producto, carrito.length);
- Toastify({
+const vaciarCarrito = ()=> {
+  carrito = [];
+  carritoContenedor.innerHTML = '';
+  Toastify({
   text: "Haz vaciado tu \n carrito de compras",
   className: "info",
   gravity: "bottom",
@@ -108,14 +79,13 @@ function vaciarCarrito(producto) {
     color:"black"
   }
 }).showToast();
-      pintarCarrito(carrito);
-    actualizarTotalCarrito(carrito);
+  actualizarTotalCarrito(carrito);
 }
 
 const actualizarTotalCarrito = (carrito) => {
-  const litrosTotal = carrito.reduce((acc, producto) => acc + (producto.cantidad * producto.litros), 0);
-  const cantidadTotal = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-  const compraTotal = carrito.reduce((acc, producto) => acc + (producto.cantidad * producto.precio), 0);
+  const litrosTotal = carrito.reduce((acc, producto) => acc + (1 * producto.producto.litros), 0);
+  const cantidadTotal = carrito.length;
+  const compraTotal = carrito.reduce((acc, producto) => acc + producto.producto.precio, 0);
 
 
   pintarTotalesCarrito(cantidadTotal, compraTotal, litrosTotal);
@@ -144,7 +114,7 @@ mostrarCarrito.addEventListener('click', (event) => {
   };
 })};
 
-function avisarCarritoVacío (){
+const avisarCarritoVacío = ()=>{
   if( carrito.length === 0 ){
     Toastify({
       text: "El carrito está vacío",
@@ -158,7 +128,7 @@ function avisarCarritoVacío (){
   }
  };
 
-function botonComprarCarrito (){
+const botonComprarCarrito = ()=>{
   avisarCarritoVacío()
     Toastify({
     text: "Tu compra está procesada \n\n Gracias por elegirnos :)",

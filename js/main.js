@@ -94,3 +94,13 @@ const mostrarColor = (data) => {
 
 }
 
+
+//Contador
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+const contador = document.getElementById("contadorCarrito")
+const cantidadCarrito = ()=>{
+let cantidad = 0 + (carrito.length)
+console.log (cantidad)
+if(contador){ contador.innerText = cantidad}
+}
+cantidadCarrito()
