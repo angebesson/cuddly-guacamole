@@ -50,7 +50,7 @@ const agregarProductoCarrito = (item) =>{
 }
 
 const eliminarProductoCarrito = (productoId) => {
-  const productoIndex = carrito.findIndex((producto) => producto.id == productoId);
+  const productoIndex = carrito.findIndex((producto) => producto.producto.id == productoId);
   carrito.splice(productoIndex, 1)
      Toastify({
       text: "Quitaste la pintura de tu compra",
